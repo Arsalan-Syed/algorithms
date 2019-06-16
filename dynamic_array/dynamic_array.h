@@ -5,14 +5,25 @@
 class dynamic_array {
 
 public:
+    //Inserts element at end of array
     void insert_el(int x);
-    void delete_el(int x);
-    int get_el(int i);
+
+    //Deletes element at index i
+    void delete_el(int idx);
+
+    //Retrieves element at index i
+    int get_el(int idx);
+
     dynamic_array();
     ~dynamic_array();
+
 private:
     int *array;
-    int current_idx = 0;
+
+    //Number of elements currently stored in array
+    int num_elements = 0;
+
+    //Max number of elements in array
     int array_capacity = 1;
 };
 

@@ -11,7 +11,9 @@ int main() {
     arr.insert_el(13);
     arr.insert_el(42);
 
-    for(int i=0;i<6;i++){
+    arr.delete_el(4);
+
+    for(int i=0;i<5;i++){
         std::cout << arr.get_el(i) << std::endl;
     }
 

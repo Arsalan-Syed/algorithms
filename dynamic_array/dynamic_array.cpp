@@ -5,7 +5,7 @@
 #include "dynamic_array.h"
 
 void dynamic_array::insert_el(int x) {
-    if(current_idx >= array_capacity){
+    if(num_elements >= array_capacity){
         int *new_array = new int[array_capacity*2];
 
         //Copy all old elements to new array
@@ -17,17 +17,20 @@ void dynamic_array::insert_el(int x) {
         array_capacity = 2*array_capacity;
     }
 
-    array[current_idx] = x;
-    current_idx ++;
+    array[num_elements] = x;
+    num_elements ++;
 }
 
-void dynamic_array::delete_el(int x) {
-
+void dynamic_array::delete_el(int idx) {
+    for(int i = idx; i<num_elements; i++){
+        array[i]=array[i+1];
+    }
+    num_elements--;
 }
 
-int dynamic_array::get_el(int i) {
-    if(i < array_capacity){
-        return array[i];
+int dynamic_array::get_el(int idx) {
+    if(idx < num_elements){
+        return array[idx];
     } else{
         throw "Index is out of bounds";
     }
