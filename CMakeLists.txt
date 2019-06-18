@@ -3,4 +3,4 @@ project(untitled1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled1 dynamic_array/main.cpp dynamic_array/dynamic_array.cpp)
+add_executable(untitled1 main.cpp dynamic_array/dynamic_array.cpp linked_list.cpp)
